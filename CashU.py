@@ -1,20 +1,21 @@
-print("Welcome to 'CashU'!")
+def __main__():
+    print("Welcome to 'CashU'!")
 
-choice = int(input("Enter [1] for money buckets, \nEnter [2] for compound interest: "))
-
-while choice != "":
-    if choice == 1:
-        Money_buckets()
-
-    elif choice == 2:
-        Compound_interest()
-
-    else:
-        print("Not a valid input!")
-
-    print("----------------------------")
-    print("Enter nothing to exit.")
     choice = int(input("Enter [1] for money buckets, \nEnter [2] for compound interest: "))
+
+    while choice != "":
+        if choice == 1:
+            Money_buckets()
+
+        elif choice == 2:
+            Compound_interest()
+
+        else:
+            print("Not a valid input!")
+
+        print("----------------------------")
+        print("Enter nothing to exit.")
+        choice = int(input("Enter [1] for money buckets, \nEnter [2] for compound interest: "))
 
 
 def Money_buckets():
@@ -38,3 +39,29 @@ def Money_buckets():
     print("Fire extinguisher (20%): $" + extinguisher)
     print("Your grow (20%) is: $" + grow)
     print("Your mojo (20%) is: $" + mojo)
+
+
+def Compound_interest():
+    print("Welcome to the miracle of compound interest!")
+
+    age = int(input("Enter your starting age: "))
+
+    while age > 60 and age < 0:
+        print("Invalid age: please pick between 0 - 60.")
+        age = int(input("Enter your starting age: "))
+
+    amount = int(input("Enter the amount you'll invest each year: "))
+    rate = int(input("Enter the annual interest rate (do not add % sign): "))
+
+    total = 0
+
+    print("Age -- You invest -- Total")
+
+    for i in range(age, 60):
+        total += amount
+        total += total * rate / 100
+
+        print(i + " -- $" + amount + " -- $" + total)
+
+
+__main__()

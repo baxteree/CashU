@@ -85,5 +85,4 @@ BEGIN Compound_interest()
         Print i + " -- $" + amount + " -- $" + total
     NEXT
 
-
 END Compound_interest
