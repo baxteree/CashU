@@ -1,13 +1,13 @@
 def __main__():
     print("Welcome to 'CashU'!")
 
-    choice = int(input("Enter [1] for money buckets, \nEnter [2] for compound interest: "))
+    choice = input("Enter [1] for money buckets, \nEnter [2] for compound interest: ")
 
     while choice:
-        if choice == 1:
+        if int(choice) == 1:
             Money_buckets()
 
-        elif choice == 2:
+        elif int(choice) == 2:
             Compound_interest()
 
         else:
@@ -15,7 +15,7 @@ def __main__():
 
         print("----------------------------")
         print("Enter nothing to exit.")
-        choice = int(input("Enter [1] for money buckets, \nEnter [2] for compound interest: "))
+        choice = input("Enter [1] for money buckets, \nEnter [2] for compound interest: ")
 
 
 def Money_buckets():
@@ -57,11 +57,13 @@ def Compound_interest():
 
     print("Age -- You invest -- Total")
 
-    for i in range(age, 60):
+    for i in range(age, 61):
         total += amount
         total += total * rate / 100
 
-        print(i + " -- $" + amount + " -- $" + total)
+        total = int(total)
+
+        print(f"{i} -- ${amount} -- ${total}")
 
 
 __main__()
