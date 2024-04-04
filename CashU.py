@@ -3,7 +3,7 @@ def __main__():
 
     choice = int(input("Enter [1] for money buckets, \nEnter [2] for compound interest: "))
 
-    while choice != "":
+    while choice:
         if choice == 1:
             Money_buckets()
 
@@ -20,7 +20,7 @@ def __main__():
 
 def Money_buckets():
     print("Welcome to money buckets!")
-    amount = input("Enter an amount to begin: ")
+    amount = int(input("Enter an amount to begin: "))
 
     blow = amount * 0.6
     grow = amount * 0.2
@@ -31,14 +31,14 @@ def Money_buckets():
     smile = blow * 0.1
     extinguisher = blow * 0.2
 
-    print("Your blow (60%) is: $" + blow)
-    print("Making up your blow is: $")
-    print("Daily (60%): $" + daily)
-    print("Splurge (10%): $" + splurge)
-    print("Smile (10%): $" + smile)
-    print("Fire extinguisher (20%): $" + extinguisher)
-    print("Your grow (20%) is: $" + grow)
-    print("Your mojo (20%) is: $" + mojo)
+    print(f"Your blow (60%) is: ${blow}")
+    print("Making up your blow is:")
+    print(f"Daily (60%): ${daily}")
+    print(f"Splurge (10%): ${splurge}")
+    print(f"Smile (10%): ${smile}")
+    print(f"Fire extinguisher (20%): ${extinguisher}")
+    print(f"Your grow (20%) is: ${grow}")
+    print(f"Your mojo (20%) is: ${mojo}")
 
 
 def Compound_interest():
