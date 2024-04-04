@@ -17,6 +17,10 @@ BEGIN CashU
             Print "Not a valid input!"
         ENDIF
 
+        Print "----------------------------"
+        Print "Enter 1 for Money buckets"
+        Print "Enter 2 for Compound interest"
+
         Get choice
 
     ENDWHILE
@@ -55,8 +59,14 @@ END Money_buckets
 BEGIN Compound_interest()
 
     Print "Welcome to the miracle of compound interest!"
+
     Print "Enter your starting age: "
     get age
+
+    WHILE age > 60 AND age < 0
+        Print "Invalid age: please pick between 0 - 60."
+        Print "Enter your starting age: "
+        get age
 
     Print "Enter the amount you'll invest each year: "
     get amount
@@ -66,10 +76,14 @@ BEGIN Compound_interest()
 
     total = 0
 
+    Print "Age -- You invest -- Total"
+
     FOR i = age TO 60
         total += amount
         total += total * rate/100
 
-        Print "Age -- You invest -- Total"
+        Print i + " -- $" + amount + " -- $" + total
+    NEXT
+
 
 END Compound_interest
