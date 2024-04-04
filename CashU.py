@@ -32,13 +32,11 @@ def Money_buckets():
     extinguisher = blow * 0.2
 
     print(f"Your blow (60%) is: ${blow}")
-
     print("Making up your blow is:")
     print(f"Daily (60%): ${daily}")
     print(f"Splurge (10%): ${splurge}")
     print(f"Smile (10%): ${smile}")
     print(f"Fire extinguisher (20%): ${extinguisher}")
-
     print(f"Your grow (20%) is: ${grow}")
     print(f"Your mojo (20%) is: ${mojo}")
 
