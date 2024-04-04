@@ -1,0 +1,75 @@
+BEGIN CashU
+
+    Print "Welcome!"
+    Print "Enter 1 for Money buckets"
+    Print "Enter 2 for Compound interest"
+
+    # user enters a number
+    Get choice
+
+    WHILE choice != ""
+
+        IF choice == 1 THEN
+            Money_buckets()
+        ELSEIF choice == 2 THEN
+            Compound_interest()
+        ELSE
+            Print "Not a valid input!"
+        ENDIF
+
+        Get choice
+
+    ENDWHILE
+
+END CashU
+
+
+BEGIN Money_buckets()
+
+    Print "Welcome to money buckets!"
+    Print "Enter an amount to begin."
+
+    Get amount
+
+    blow = amount * 0.6
+    grow = amount * 0.2
+    mojo = amount * 0.2
+
+    daily = blow * 0.6
+    splurge = blow * 0.1
+    smile = blow * 0.1
+    extinguisher = blow * 0.2
+
+    Print "Your blow (60%) is: " + blow
+    Print "Making up your blow is:"
+    Print "Daily (60%): " + daily
+    Print "Splurge (10%): " + splurge
+    Print "Smile (10%): " + smile
+    Print "Fire extinguisher (20%): " + extinguisher
+    Print "Your grow (20%) is: " + grow
+    Print "Your mojo (20%) is: " + mojo
+
+END Money_buckets
+
+
+BEGIN Compound_interest()
+
+    Print "Welcome to the miracle of compound interest!"
+    Print "Enter your starting age: "
+    get age
+
+    Print "Enter the amount you'll invest each year: "
+    get amount
+
+    Print "Enter the annual interest rate (do not add % sign): "
+    get rate
+
+    total = 0
+
+    FOR i = age TO 60
+        total += amount
+        total += total * rate/100
+
+        Print "Age -- You invest -- Total"
+
+END Compound_interest
