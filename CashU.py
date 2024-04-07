@@ -5,10 +5,10 @@ def __main__():
 
     while choice:
         if int(choice) == 1:
-            Money_buckets()
+            money_buckets()
 
         elif int(choice) == 2:
-            Compound_interest()
+            compound_interest()
 
         else:
             print("Not a valid input!")
@@ -18,7 +18,7 @@ def __main__():
         choice = input("Enter [1] for money buckets, \nEnter [2] for compound interest: ")
 
 
-def Money_buckets():
+def money_buckets():
     print("Welcome to money buckets!")
     amount = int(input("Enter an amount to begin: "))
 
@@ -41,12 +41,12 @@ def Money_buckets():
     print(f"Your mojo (20%) is: ${mojo}")
 
 
-def Compound_interest():
+def compound_interest():
     print("Welcome to the miracle of compound interest!")
 
     age = int(input("Enter your starting age: "))
 
-    while age > 60 and age < 0:
+    while not 0 <= age <= 60:
         print("Invalid age: please pick between 0 - 60.")
         age = int(input("Enter your starting age: "))
 
@@ -61,7 +61,7 @@ def Compound_interest():
         total += amount
         total += total * rate / 100
 
-        total = int(total)
+        total = int(round(total, 0))
 
         print(f"{i} -- ${amount} -- ${total}")
 
